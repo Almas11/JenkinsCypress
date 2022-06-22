@@ -1,0 +1,176 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-21T11:00:58.251Z",
+    "end": "2022-06-21T11:01:24.560Z",
+    "duration": 26309,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "55f19c49-1f88-4743-b40b-4b45cb15dc52",
+      "title": "",
+      "fullFile": "cypress\\e2e\\homepage.cy.js",
+      "file": "cypress\\e2e\\homepage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "44ad47de-1482-489b-ba84-e4b5798093ad",
+          "title": "Home Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should appear Popup",
+              "fullTitle": "Home Page should appear Popup",
+              "timedOut": null,
+              "duration": 20488,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#app-modal > .modal-dialog > .modal-content').should('be.visible');",
+              "err": {},
+              "uuid": "60830d3f-131d-43ae-8607-e98c16c73582",
+              "parentUUID": "44ad47de-1482-489b-ba84-e4b5798093ad",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should cancel QR Popup",
+              "fullTitle": "Home Page should cancel QR Popup",
+              "timedOut": null,
+              "duration": 1222,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#app-modal > .modal-dialog > .modal-content > .modal-header > .close > span').click({\n  timeout: 100\n}).should('not.be.visible');",
+              "err": {},
+              "uuid": "e0a8ebc9-ecce-47c6-8389-fa387b4263d0",
+              "parentUUID": "44ad47de-1482-489b-ba84-e4b5798093ad",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should appear Logo",
+              "fullTitle": "Home Page should appear Logo",
+              "timedOut": null,
+              "duration": 86,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.navbar-brand > img').should('be.visible');",
+              "err": {},
+              "uuid": "b9e681ce-a9a6-4d28-b572-9f65b51a897f",
+              "parentUUID": "44ad47de-1482-489b-ba84-e4b5798093ad",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should appear SearchBar ",
+              "fullTitle": "Home Page should appear SearchBar ",
+              "timedOut": null,
+              "duration": 259,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#app-search').should('be.visible');",
+              "err": {},
+              "uuid": "e5d19904-9aa6-4df3-b243-ebeaa8cb48eb",
+              "parentUUID": "44ad47de-1482-489b-ba84-e4b5798093ad",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should appear SearchList",
+              "fullTitle": "Home Page should appear SearchList",
+              "timedOut": null,
+              "duration": 3943,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const list = [\"Apple iPhone X\", \"Laptop\", \"Toys\", \"Lenovo Laptop\"];\nconst random = Math.floor(Math.random() * list.length);\nconst getValue = list[random];\ncy.get('#app-search').type(getValue, {\n  timeout: 100\n});\ncy.get('.searchSuggestionBox').should('be.visible');\ncy.get('#SearchResultLoader > .spinner-border').should('not.be.visible');\ncy.get('.searchSuggestionBoxChild > li > a').each($el => {\n  const actual = $el.text();\n  const expected = list[random].split(\" \");\n  for (let i = 0; i < expected.length; i++) {\n    expect(actual).contain(expected[i]);\n  }\n});",
+              "err": {},
+              "uuid": "e15cff33-7297-4592-b296-ef21d1bef8e2",
+              "parentUUID": "44ad47de-1482-489b-ba84-e4b5798093ad",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "60830d3f-131d-43ae-8607-e98c16c73582",
+            "e0a8ebc9-ecce-47c6-8389-fa387b4263d0",
+            "b9e681ce-a9a6-4d28-b572-9f65b51a897f",
+            "e5d19904-9aa6-4df3-b243-ebeaa8cb48eb",
+            "e15cff33-7297-4592-b296-ef21d1bef8e2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25998,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

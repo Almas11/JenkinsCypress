@@ -1,0 +1,16 @@
+{
+  "name": "CyFrame",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:spec": "cypress run --spec"
+  }
+}
