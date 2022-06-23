@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("cancelPopup", () => {
+    cy.get('#app-modal > .modal-dialog > .modal-content > .modal-header > .close > span')
+        .should('be.visible')
+        .click({timeout:100})
+})
+Cypress.on('uncaught:exception',(err,runnable)=>{
+    return false
+})

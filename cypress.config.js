@@ -5,7 +5,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
     },
-    baseUrl: 'http://web.cartlow.lan',
+    baseUrl: 'https://www.cartlow.com',
     requestTimeout:10000,
     screenshotsFolder:'cypress/screenshots',
     videosFolder:'cypress/videos',

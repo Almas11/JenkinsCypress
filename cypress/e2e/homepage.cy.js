@@ -1,26 +1,21 @@
 
 describe('Home Page',()=>{
+
+    const list = ["Apple iPhone X","Laptop","Toys","Lenovo Laptop"]
+    const random = Math.floor(Math.random() * list.length);
+    const getValue = list[random];
+
     before('Navigate to the Website',()=>{
         cy.visit('/')
     })
-    it('should appear Popup', ()=> {
-        cy.get('#app-modal > .modal-dialog > .modal-content').should('be.visible')
-    });
-    it('should cancel QR Popup',  ()=> {
-        cy.get('#app-modal > .modal-dialog > .modal-content > .modal-header > .close > span')
-            .click({timeout:100})
-            .should('not.be.visible')
-    });
     it('should appear Logo',()=>{
+        cy.cancelPopup()
         cy.get('.navbar-brand > img').should('be.visible')
     })
     it('should appear SearchBar ',()=> {
         cy.get('#app-search').should('be.visible')
     });
     it('should appear SearchList',()=> {
-        const list = ["Apple iPhone X","Laptop","Toys","Lenovo Laptop"]
-        const random = Math.floor(Math.random() * list.length);
-        const getValue = list[random];
         cy.get('#app-search').type(getValue,{timeout:100})
         cy.get('.searchSuggestionBox').should('be.visible')
         cy.get('#SearchResultLoader > .spinner-border').should('not.be.visible')
@@ -32,8 +27,10 @@ describe('Home Page',()=>{
             }
         })
     })
-    it(()=>{
-        // almas
-        // talha
+    it("verify search is working ",()=>{
+        cy.get('.input-group-prepend-overlay > .input-group-text > .czi-search').click()
+        cy.cancelPopup()
+
+
     })
 })
