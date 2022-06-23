@@ -29,6 +29,7 @@ Cypress.Commands.add("cancelPopup", () => {
         .should('be.visible')
         .click({timeout:100})
 })
+
 Cypress.on('uncaught:exception',(err,runnable)=>{
     return false
 })
